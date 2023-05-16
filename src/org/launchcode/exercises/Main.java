@@ -3,7 +3,7 @@ package org.launchcode.exercises;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Main {
+public class Main extends Exception {
 
     public static void main(String[] args) {
 
@@ -35,7 +35,19 @@ public class Main {
     public static int CheckFileExtension(String fileName)
     {
         // Write code here!
-        return 1;
-    }
+        if(fileName.contains(".java")){
+            return 1;
+        } else if (!fileName.contains(".java")){
+            return 0;
+        }
 
+        if (fileName.isEmpty() || fileName.isBlank()){
+            try{
+                    throw new IllegalArgumentException("You must submit a valid file name.");
+            } catch(IllegalArgumentException i){
+                    i.printStackTrace();
+                }
+            }
+        return -1;
+        }
 }
