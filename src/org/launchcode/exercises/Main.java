@@ -21,11 +21,21 @@ public class Main {
     public static void Divide(int x, int y)
     {
         // Write code here!
-    }
+        if(y<0){
+            try{
+                throw new ArithmeticException("You cannot divide by 0.");
+            } catch(ArithmeticException a) {
+                a.printStackTrace();
+            }
+        } else {
+            int dividend = x / y;
+            }
+        }
 
     public static int CheckFileExtension(String fileName)
     {
         // Write code here!
+        return 1;
     }
 
 }
